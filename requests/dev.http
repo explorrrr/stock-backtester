@@ -1,0 +1,6 @@
+### variable configulations
+@domain_name = localhost
+@port_number = 8000
+
+### health check
+GET http://{{domain_name}}:{{port_number}}/health_check

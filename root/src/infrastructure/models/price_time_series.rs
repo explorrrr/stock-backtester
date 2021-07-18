@@ -1,8 +1,7 @@
 use chrono::{DateTime, Utc};
 
-use crate::schema::price_time_series_meta;
 use crate::schema::price_time_series;
-
+use crate::schema::price_time_series_meta;
 
 #[derive(Insertable)]
 #[table_name = "price_time_series_meta"]
@@ -30,7 +29,7 @@ pub struct PriceTimeSeriesMeta {
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
     pub deleted_at: Option<DateTime<Utc>>,
-    pub is_deleted: bool
+    pub is_deleted: bool,
 }
 
 #[derive(Queryable, Debug)]
@@ -45,5 +44,5 @@ pub struct PriceTimeSeries {
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
     pub deleted_at: Option<DateTime<Utc>>,
-    pub is_deleted: bool
+    pub is_deleted: bool,
 }

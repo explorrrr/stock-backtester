@@ -20,7 +20,6 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .wrap(Logger::default())
             .service(controllers::health_check::health_check)
-
             // insert time series data
             .service(controllers::price_time_series::store_price_time_series_data)
             // execute back test

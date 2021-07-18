@@ -27,7 +27,4 @@ table! {
 
 joinable!(price_time_series -> price_time_series_meta (price_time_series_meta_id));
 
-allow_tables_to_appear_in_same_query!(
-    price_time_series,
-    price_time_series_meta,
-);
+allow_tables_to_appear_in_same_query!(price_time_series, price_time_series_meta,);

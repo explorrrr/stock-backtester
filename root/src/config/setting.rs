@@ -5,7 +5,6 @@ use std::process;
 use crate::domain::repository::repositories::Repositories;
 use crate::infrastructure::repository::price_time_series::PriceTimeSeriesPostgresRepository;
 
-
 #[derive(Clone, Default)]
 pub struct RepositoriesImpls {
     // time series
@@ -19,7 +18,6 @@ impl Repositories for RepositoriesImpls {
         &self.price_time_series_repository
     }
 }
-
 
 #[derive(Deserialize, Debug)]
 pub struct Config {

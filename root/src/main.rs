@@ -21,9 +21,10 @@ async fn main() -> std::io::Result<()> {
             .wrap(Logger::default())
             .service(controllers::health_check::health_check)
 
-            // テストデータの投入
+            // insert time series data
             .service(controllers::price_time_series::store_price_time_series_data)
-            // テストの実行
+            // execute back test
+            .service(controllers::back_test::back_test)
     })
     .bind(config.server_addr.clone())?
     .run()

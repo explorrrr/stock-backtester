@@ -14,7 +14,28 @@ Content-Type: application/json
     "ticker": "APPL",
     "price_time_series_data": [
         {"time_stamp": "2021/07/16 00:00:00", "open": 100.0, "close": 110.0, "high": 110.0, "low": 100.0},
-        {"time_stamp": "2021/07/17 00:00:00", "open": 100.0, "close": 110.0, "high": 110.0, "low": 100.0},
-        {"time_stamp": "2021/07/18 00:00:00", "open": 100.0, "close": 110.0, "high": 110.0, "low": 100.0}
+        {"time_stamp": "2021/07/17 00:00:00", "open": 110.0, "close": 120.0, "high": 120.0, "low": 110.0},
+        {"time_stamp": "2021/07/18 00:00:00", "open": 120.0, "close": 110.0, "high": 120.0, "low": 110.0},
+        {"time_stamp": "2021/07/19 00:00:00", "open": 110.0, "close": 120.0, "high": 120.0, "low": 110.0},
+        {"time_stamp": "2021/07/20 00:00:00", "open": 120.0, "close": 120.0, "high": 120.0, "low": 120.0},
+        {"time_stamp": "2021/07/21 00:00:00", "open": 120.0, "close": 130.0, "high": 130.0, "low": 110.0},
+        {"time_stamp": "2021/07/22 00:00:00", "open": 145.0, "close": 150.0, "high": 160.0, "low": 145.0}
+    ]
+}
+
+### back test
+POST http://{{domain_name}}:{{port_number}}/backtest
+Content-Type: application/json
+
+{
+    "initial_asset": 10000.0,
+    "ticker": "APPL",
+    "orders": [
+        {"time_stamp": "2021/07/17 00:00:00", "amount": 3.0, "side": "BUY"},
+        {"time_stamp": "2021/07/18 00:00:00", "amount": 3.0, "side": "SELL"},
+        {"time_stamp": "2021/07/19 00:00:00", "amount": 1.0, "side": "SELL"},
+        {"time_stamp": "2021/07/20 00:00:00", "amount": 3.0, "side": "SELL"},
+        {"time_stamp": "2021/07/21 00:00:00", "amount": 3.0, "side": "BUY"},
+        {"time_stamp": "2021/07/22 00:00:00", "amount": 1.0, "side": "BUY"}
     ]
 }

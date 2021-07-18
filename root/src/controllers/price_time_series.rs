@@ -32,7 +32,7 @@ async fn store_price_time_series_data(
     let repo = RepositoriesImpls::default();
     let price_time_series_domain_service = PriceTimeSeriesDomainService::new(&repo);
 
-    let result = price_time_series_domain_service.store_time_series_data(request_body.0).await;
+    let _ = price_time_series_domain_service.store_time_series_data(request_body.0).await;
 
     let msg = "Store time series data successfully".to_string();
     Ok(HttpResponse::Ok().json(TimeSeriesStoreResponse {

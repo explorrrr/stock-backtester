@@ -4,3 +4,17 @@
 
 ### health check
 GET http://{{domain_name}}:{{port_number}}/health_check
+
+
+### store time series data
+POST http://{{domain_name}}:{{port_number}}/timeseries
+Content-Type: application/json
+
+{
+    "ticker": "APPL",
+    "price_time_series_data": [
+        {"time_stamp": "2021/07/16 00:00:00", "open": 100.0, "close": 110.0, "high": 110.0, "low": 100.0},
+        {"time_stamp": "2021/07/17 00:00:00", "open": 100.0, "close": 110.0, "high": 110.0, "low": 100.0},
+        {"time_stamp": "2021/07/18 00:00:00", "open": 100.0, "close": 110.0, "high": 110.0, "low": 100.0}
+    ]
+}
